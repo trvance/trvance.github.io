@@ -78,6 +78,7 @@ i{
 
 a:link, a:visited {
 	text-decoration: none;
+	color: green;
 }
 
 .project-title{
