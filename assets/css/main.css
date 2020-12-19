@@ -76,6 +76,10 @@ i{
 	color:green;
 }
 
+a:link, a:visited {
+	text-decoration: none;
+}
+
 .project-title{
 	text-align: center;
 	margin-top: 2em;
