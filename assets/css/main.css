@@ -74,7 +74,8 @@ input, select, textarea {
 i{
 	font-size:4em;
 	color:green;
-	margin-right:.06em;
+	margin-right: .03em;
+	margin-left: .03em;
 }
 
 .project-title{
