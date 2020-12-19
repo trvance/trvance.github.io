@@ -72,10 +72,10 @@ input, select, textarea {
 	appearance: none;
 }
 i{
-	font-size:4em;
+	font-size: 3.5em;
 	color:green;
-	margin-right: .03em;
-	margin-left: .03em;
+	margin-right: .05em;
+	margin-left: .05em;
 }
 
 .project-title{
