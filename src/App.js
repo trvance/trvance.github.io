@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useRef, useState, useCallback, useLayoutEffect } from 'react'
+import * as S from './globalStyles'
+import SplashPage from './pages/splashPage/SplashPage'
+import ProjectsPage from './pages/projectsPage/ProjectsPage'
+import AboutMePage from './pages/aboutMePage/AboutMePage'
+import NavMenu from './components/navMenu/NavMenu'
+
 
 function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <S.App>
+      <S.GlobalStyle />
+      <NavMenu />
+      
+      <SplashPage />
+      <ProjectsPage />
+      <AboutMePage />
+    </S.App>
   );
 }
 
