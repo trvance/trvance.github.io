@@ -4,42 +4,63 @@ import styled from 'styled-components'
 export const SplashPage = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    box-sizing: border-box;
+    /* background-color: blue; */
+    height: 100%;
+
+    @media (max-width: 1200px) {
+        justify-content: center;
+        height: 100%;
+        min-height: 100dvh;
+    }
 `
 
-export const FlexRow = styled.div`
+export const MainContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
 `
 
-export const Me = styled.img`
+export const MeLargeDisplay = styled.img`
     width: 20vw;
     margin: 0em -3em;
     z-index: 0;
+
+    @media (max-width: 1200px) {
+        display: none;
+    }
 `
 
-export const Name = styled.h1`
-    /* font-size: 10em; */
-    font-size: 15vw;
-    color: #9BDEAC;
+export const MeSmallDisplay = styled.img`
+    display: none;
+    height: 80vw;
+
+
+    @media (max-width: 1200px) {
+        display: inline;
+    }
+`
+
+export const FirstName = styled.h1`
     z-index: 1;
-    text-shadow: 1px 3px 15px #292929;
+    color: #11998e;
+`
+
+export const LastName = styled.h1`
+    z-index: 1;
+    color: #11998e;
 `
 
 export const OverlappingText = styled.div`
     display: flex;
     flex-direction: row;
-    font-family: 'Yanone Kaffeesatz';
+    align-self: center;
     flex-wrap: wrap;
 
-    p {
-        font-family: 'Yanone Kaffeesatz';
-        font-size: 3em;
-        font-weight: 600;
-        color: #e4e4e4;
+    @media (max-width: 1200px) {
+        flex-direction: column;
     }
 `
 
@@ -48,8 +69,15 @@ export const GradientText = styled.span`
     font-family: 'Yanone Kaffeesatz';
 `
 
-export const ButtonContainer = styled.div`
-    position: absolute;
-    bottom: 0px;
-    margin: 1em;
+export const IconsContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* bottom: 50px; */
+
+    img {
+        height: 8vw;
+        max-height: 75px;
+    }
 `
+

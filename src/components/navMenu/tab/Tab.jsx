@@ -2,14 +2,13 @@ import * as S from './Tab.styles'
 
 
 const Tab = (props) => {
-	const handleClick = () => {
-
-	}
 
 	return (
-		<S.Tab ref={props.ref} href={props.href}>
-			{props.children}
-		</S.Tab>
+		<S.TabBackground ref={props.ref} href={props.href} onClick={props.onClick} backgroundColor={props.backgroundColor}>
+			<S.TabText fontColor={props.fontColor}>
+				{props.children}
+			</S.TabText>
+		</S.TabBackground>
 	)
 }
 

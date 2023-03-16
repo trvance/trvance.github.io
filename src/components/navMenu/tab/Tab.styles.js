@@ -1,36 +1,38 @@
 import styled from 'styled-components'
 
 
-export const Tab = styled.a`
-    &:link { text-decoration: none; }
-    &:visited { text-decoration: none; }
-    &:hover { text-decoration: none; }
-    &:active { text-decoration: none; }
-
-    display: flex;
-    cursor: pointer;
-    background: none;
-    font-size: 12px;
+export const TabBackground = styled.div`
+    writing-mode: vertical-lr;
+    transform: scale(-1, -1);
+    font-size: 5em;
     font-weight: 600;
-    padding: .5em 1em;
-    color: #E4E4E4;
-    
-    &:hover {
-        color: #9BDEAC;
-    }
+    font-family: 'Bebas Neue';
+    width: 80px;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+    display: flex;
+    align-items: right;
 
-    /* &:hover:before{
-        /* content: 'H'; */
+
+    background-color: ${props => props.backgroundColor};
+
+
+    &:hover {
+        font-size: 5.3em;
+        z-index: 5;
     }
 
     &:active {
-        color: #9BDEAC;
+        font-size: 5.1em;
     }
+`
 
-    &:before {
-        width: 10px;
-        height: 10px;
-        background-color: #9BDEAC;
-        border-radius: 10px;
-    } */
+export const TabText = styled.a`
+    color: ${props => props.fontColor};
+
+    transition: font-size .1s, color .1s;
+    position: relative;
+    right: 23px;
 `

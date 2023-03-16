@@ -1,82 +1,42 @@
 import { useState } from 'react'
 import * as S from './NavMenu.styles'
-// import Tab from '../buttons/textButton/TextButton'
 import Tab from './tab/Tab'
-import { motion, useTransform, useScroll, useMotionValueEvent, useSpring, useMotionValue } from 'framer-motion'
-import TextButton from '../buttons/textButton/TextButton'
 
 
-const NavMenu = () => {
-	const { scrollY, scrollYProgress } = useScroll()
-	const height = useTransform(
-		scrollY,
-		// Map y from these values:
-		[15, window.innerHeight],
-		// Into these values:
-		['15%', '100%']
-	)
-	
-	
-	const handleTabClick = (tab) => {
-		switch(tab) {
-			case 'Home':
-				window.scrollTo({top: 0})
-				break
-			case 'Projects':
-				window.scrollTo(0,300)
-				break
-		}
-	}
-	
-
+const NavMenu = ({page, setPage}) => {
+	// const highlightColor = '#339989'
+	const highlightColor = '#11998e'
+	const currentPage = page.type.name
+	console.log(currentPage)
 
 	return(
 		<S.NavMenu>
-			{/* Scroll Indicator */}
-			<S.SmallDisplay>
-				<TextButton>=</TextButton>
-			</S.SmallDisplay>
+			{/* Home Tab */}
+			<Tab 
+				fontColor={currentPage==='SplashPage' ? highlightColor : '#393E41'}
+				backgroundColor='#2F3437'
+				onClick={() => setPage('home')}
+			>
+				Home
+			</Tab>
 
-			<S.LargeDisplay>
-				{/* <S.ScrollIndicatorContainer>
-					<S.ScrollIndicator as={motion.div} style={{height: height}}/>
-				</S.ScrollIndicatorContainer> */}
+			{/* Projects Tab */}
+			<Tab 
+				fontColor={currentPage==='ProjectsPage' ? highlightColor : '#2F3437'}
+				backgroundColor='#393E41'
+				onClick={() => setPage('projects')}
+			>
+				Projects
+			</Tab>
 
-				{/* Tabs */}
-				<S.TabsContainer>
-					<Tab 
-						href='#splash'
-					>
-						<motion.h2 
-							initial={{opacity: 0, x: -100}} 
-							animate={{opacity: 1, x: 0}}
-						>
-							Home
-						</motion.h2>
-					</Tab>
-					<Tab 
-						href='#projects'
-					>
-						<motion.h2 
-							initial={{opacity: 0, x: -100}} 
-							animate={{opacity: 1, x: 0}}
-						>
-							Projects
-						</motion.h2>
-					</Tab>
-					<Tab 
-						href='#about-me'
-					>
-						<motion.h2 
-							initial={{opacity: 0, x: -100}} 
-							animate={{opacity: 1, x: 0}}
-						>
-							About Me
-						</motion.h2>
-					</Tab>
-				</S.TabsContainer>
-			</S.LargeDisplay>
-
+			{/* About Me Tab */}
+			<Tab 
+				fontColor={currentPage==='AboutMePage' ? highlightColor : '#393E41'}
+				backgroundColor='#2F3437'
+				onClick={() => setPage('aboutMe')}
+			>
+				Contact Me
+			</Tab>
 		</S.NavMenu>
 	)
 }
