@@ -70,7 +70,7 @@ export const GlobalStyle = createGlobalStyle`
 
 export const App = styled.div`
     display: flex;
-    /* height: 100dvh; */
+    min-height: 100dvh;
     /* width: 100vw; */
 
     flex-direction: ${props => props.isPortrait ? 'column' : 'row'};
