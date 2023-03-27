@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.8105dd1b.css",
-    "main.js": "/static/js/main.0ee39460.js",
+    "main.js": "/static/js/main.3ea94293.js",
     "static/js/787.50709ce5.chunk.js": "/static/js/787.50709ce5.chunk.js",
     "static/media/Ocufly-screenshot.png": "/static/media/Ocufly-screenshot.7fb3b0fe27598fa504b6.png",
     "static/media/Steganography-initial.png": "/static/media/Steganography-initial.94f192b58ea1948002bf.png",
@@ -38,11 +38,11 @@
     "static/media/email.png": "/static/media/email.480acc1df519324039c7.png",
     "index.html": "/index.html",
     "main.8105dd1b.css.map": "/static/css/main.8105dd1b.css.map",
-    "main.0ee39460.js.map": "/static/js/main.0ee39460.js.map",
+    "main.3ea94293.js.map": "/static/js/main.3ea94293.js.map",
     "787.50709ce5.chunk.js.map": "/static/js/787.50709ce5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8105dd1b.css",
-    "static/js/main.0ee39460.js"
+    "static/js/main.3ea94293.js"
   ]
 }
