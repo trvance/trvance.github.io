@@ -2,25 +2,24 @@ import styled from 'styled-components'
 
 
 export const ProjectsPage = styled.div`
-    height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 4em;
     box-sizing: border-box;
-    padding: 4em;
-    overflow-y: overlay;
+
+    // Portrait responsive sizes.
+    gap: ${props => props.isPortrait ? '4rem' : '5rem'};
+    padding: ${props => props.isPortrait ? '2rem' : '2rem'};
+    padding-bottom: ${props => props.isPortrait ? '8rem' : null};
+
 `
 
 export const HeaderContainer = styled.div`
-    flex: 0 0 20em;
     display: flex;
     flex-direction: column;
-    /* margin-bottom: 2em; */
-    /* gap: 1em; */
+    flex-wrap: wrap;
 `
 
 export const SubHeader = styled.h2`
-    line-height: 50px;
     span {
         background: #11998e;  /* fallback for old browsers */
         background: -webkit-linear-gradient(to left, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
@@ -38,15 +37,19 @@ export const Title = styled.h1`
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+
+    /* @media (max-width: 1200px) {
+        font-size: 25vw;
+    } */
 `
 
 export const ProjectsContainer = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 7em;
     box-sizing: border-box;
-    
-    @media (max-width: 1200px) {
-        gap: 10em;
-    }
+    /* max-width: 80rem;
+    align-items: flex-start; */
+
+    gap: ${props => props.isPortrait ? '10em' : '7em'};
 `

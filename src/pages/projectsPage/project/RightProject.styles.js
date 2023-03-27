@@ -5,10 +5,12 @@ export const RightProject = styled.div`
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
+    gap: 2em;
 
     @media (max-width: 1200px) {
-        align-items: flex-end;
+        align-items: center;
         flex-direction: column;
+        gap: 1em;
     }
 `
 
@@ -17,7 +19,15 @@ export const HeaderContainer = styled.div`
     flex-direction: row-reverse;
     align-items: center;
     background-color: #2F3437;
-    border-radius: 25px;
+    border-radius: 35px;
+    box-sizing: border-box;
+    padding-right: 1em;
+    
+    @media (max-width: 1200px) {
+        width: 100%;
+        flex-direction: column;
+        padding: .5em;
+    }
 `
 
 export const TitleContainer = styled.div`
@@ -35,11 +45,17 @@ export const IconContainer = styled.div`
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 250px;
+    max-width: 250px;
     height: 225px;
-    border-radius: 0px 10px 10px 0px;
     box-sizing: border-box;
     padding: 2em 1em;
+
+    @media (max-width: 1200px) {
+        width: 100%;
+        height: auto;
+        max-width: none;
+        padding: 1em 0em 0em 0em;
+    }
 `
 
 export const Icon = styled.img`
@@ -53,8 +69,7 @@ export const TextContainer = styled.div`
     gap: .5em;
     flex: 1;
     box-sizing: border-box;
-    padding: 1em 2em;
-
+    max-width: 45rem;
     text-align: right;
 `
 

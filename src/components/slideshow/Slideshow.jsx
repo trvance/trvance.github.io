@@ -5,10 +5,10 @@ import OcuflyLogo from '../../assets/projectImages/Ocufly-blue-water.png'
 import OcuflyPanel from '../../assets/projectImages/Ocufly-screenshot.png'
 
 
-const Slideshow = ({images=[], color='#339989', scrollDirection='left'}) => {
+const Slideshow = ({isPortrait, images=[], color='#339989', scrollDirection='left'}) => {
 
 	return (
-		<S.Slideshow color={color}>
+		<S.Slideshow color={color} isPortrait={isPortrait}>
 			{/* 
 				Scrolling container needs to double images to give illusion of infinite scrolling.
 				imageCount is for knowing how many pixels (imageCount * image size + margin) the 
@@ -17,6 +17,12 @@ const Slideshow = ({images=[], color='#339989', scrollDirection='left'}) => {
 				first images are shown again.
 			 */}
 			<S.ScrollingContainer imageCount={images.length} scrollDirection={scrollDirection}>
+
+				{images.map((url, index) => (
+					<S.ImageContainer key={index}>
+						<S.Image src={url} />
+					</S.ImageContainer>
+				))}
 
 				{images.map((url, index) => (
 					<S.ImageContainer key={index}>

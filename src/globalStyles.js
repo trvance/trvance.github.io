@@ -6,7 +6,6 @@ export const GlobalStyle = createGlobalStyle`
     * {
         padding: 0;
         margin: 0;
-        /* font-family: Helvetica; */
     }
 
     html {
@@ -20,16 +19,20 @@ export const GlobalStyle = createGlobalStyle`
     h1 {
         /* font-family: 'Lobster'; */
         font-family: 'Bebas Neue';
-        font-size: 15vw;
-
-        @media (max-width: 1200px) {
-            font-size: 20vw;
+        font-size: 14vw;
+        
+        @media (max-width: 12cm) {
+            line-height: 21vw;
+            font-size: 25vw;
         }
     }
 
     h2 {
         font-family: 'Source Sans Pro';
-        font-size: 4vw;
+
+        line-height: ${props => props.isPortrait ? '10vw' : '4vw'};
+        font-size: ${props => props.isPortrait ? '11vw' : '5vw'};
+        letter-spacing: ${props => props.isPortrait ? '-4px' : '0px'};
 
         span {
             background: #11998e;  /* fallback for old browsers */
@@ -38,10 +41,6 @@ export const GlobalStyle = createGlobalStyle`
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-        }
-
-        @media (max-width: 1200px) {
-            font-size: 30px;
         }
     }
 
@@ -53,30 +52,44 @@ export const GlobalStyle = createGlobalStyle`
     p {
         font-family: 'Source Sans Pro';
         color: #B4B4B4;
-        font-size: 18px;
-        font-weight: 600;
+        font-size: 20px;
+        font-weight: 500;
+
+        span {
+            background: #11998e;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #38ef7d 10%, #11998e 80%);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #38ef7d 10%, #11998e 80%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 30px;
+        }
     }
 `
+
 
 export const App = styled.div`
     display: flex;
+    /* height: 100dvh; */
+    /* width: 100vw; */
+
+    flex-direction: ${props => props.isPortrait ? 'column' : 'row'};
 `
 
 export const NavContainer = styled.div`
-    display: flex;
-    height: 100vh;
-
-    @media (max-width: 1200px) {
-        display: none;
-    }
+    flex: 0 0 15rem;
 `
 
 export const PageContainer = styled.div`
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    height: 100dvh; // Dynamic View Height.  Helps with iPhone search bar affecting height.
-
-    min-height: -webkit-fill-available;
+    /* width: ${props => props.isPortrait ? '100vw' : `calc(100vw - 15rem)`}; */
+    /* width: 100%; */
+    height: 100dvh;
+    overflow-y: overlay;
 `
-
+export const MenuButtonContainer = styled.div`
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 5;
+`

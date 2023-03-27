@@ -6,12 +6,12 @@ import { motion } from 'framer-motion'
 const sampleText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam'
 
 
-const LeftProject = ({project}) => {
+const LeftProject = ({isPortrait, project}) => {
 	return (
-		<S.LeftProject>
-			<S.HeaderContainer>
+		<S.LeftProject isPortrait={isPortrait}>
+			<S.HeaderContainer isPortrait={isPortrait}>
 				{/* Project Images Scroller */}
-				<Slideshow color={project.color} images={project.images}/>
+				<Slideshow isPortrait={isPortrait} color={project.color} images={project.images}/>
 
 				{/* Programming Icons */}
 				<S.IconContainer>

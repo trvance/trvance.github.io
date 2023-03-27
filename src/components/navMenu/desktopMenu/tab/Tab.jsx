@@ -1,4 +1,5 @@
 import * as S from './Tab.styles'
+import HomeIcon from '../../../../assets/navIcons/homefilled.png'
 
 
 const Tab = (props) => {
@@ -8,6 +9,7 @@ const Tab = (props) => {
 			<S.TabText fontColor={props.fontColor}>
 				{props.children}
 			</S.TabText>
+			<S.Icon isSelected={props.isSelected} src={props.icon}/>
 		</S.TabBackground>
 	)
 }
