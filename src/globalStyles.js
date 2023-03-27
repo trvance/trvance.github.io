@@ -70,13 +70,16 @@ export const GlobalStyle = createGlobalStyle`
 
 export const App = styled.div`
     display: flex;
+    min-height: 100vh;
     min-height: 100dvh;
+    /* height: 100dvh; */
     /* width: 100vw; */
 
     flex-direction: ${props => props.isPortrait ? 'column' : 'row'};
 `
 
 export const NavContainer = styled.div`
+    /* height: 20rem; */
     flex: 0 0 15rem;
 `
 
